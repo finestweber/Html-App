@@ -6,12 +6,14 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #fff;
-    color: dimgrey;
+    background-color: white;
+    color: #696969;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    font-family: "Inter", sans-serif;
 }
 .wrapper{
     height: 100vh;
@@ -30,8 +32,8 @@ body{
 }
 .screen-backdrop{
     height: 25rem;
-    width: 130%;
-    background-color: #f9ea85;
+    width: 140%;
+    background-color: #f9ae85;
 
     border-radius: 0 0 50% 50%;
     transform: translateX(-50%);
@@ -46,5 +48,16 @@ body{
 .menu-btn{
     width: 2rem;
     cursor: pointer;
-    color: #2e2e2e;
+}
+.welcome{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.welcome h1{
+    font-size: 1.5rem;
+}
+.welcome p{
+    font-weight: 400;
+    font-style: italic;
 }
