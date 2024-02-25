@@ -3,13 +3,13 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: 0;
 }
 body{
-    min-height: 100vh;
-    color: #2e2e2e;
+    
     background-color: #fff;
-
+    color: #2e2e2e;
+    /* centalizando as bordas*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,15 +17,26 @@ body{
 .wrapper{
     height: 100vh;
     width: 100%;
+    overflow: hidden;
+    position: relative;/* esconde a cor que estiver fora da borda SCREEN-BACKDROP*/
 }
-@media (min-width:68px){
+@media (min-width:68px) {
     .wrapper{
-        height: 50rem;
-        width: 25rem;
         border: 10px solid #2e2e2e;
         border-radius: 40px;
+        height: 50rem;
+        width: 25rem;
     }
 }
-
+/*Screen Backdrop  fundo colorido*/
+.screen-backdrop{
+    width: 130%;
+    height: 25rem;
+    background-color: #f9ea85;
+    border-radius: 0 0 50% 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+}
 
 
