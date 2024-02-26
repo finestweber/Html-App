@@ -1,87 +1,173 @@
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    background-color: white;
-    color: #696969;
 
+body{
+    color: #686868;
     display: flex;
     align-items: center;
     justify-content: center;
-    
     font-family: "Inter", sans-serif;
-
+    background-image: linear-gradient(#232732,#393d49,#13161c);
 }
-.wrapper{
+
+.wrapper {
+    position: relative;
     height: 100vh;
     width: 100%;
-    
     overflow: hidden;
-    position: relative;
+    padding: 30px 0;
+    display: flex;
 }
-@media (min-width:68px) {
-    .wrapper{
-        height: 50em;
-        width: 25em;
-        border: 9px solid #696969;
-        border-radius: 30px;
+
+@media (min-width:1380px) {
+    .wrapper {
+        height: 50rem;
+        width: 25rem;
+        border-radius: 40px;
+        border: 10px solid #2e2e2e;
     }
 }
-/* Funddo colorido*/
-.screen-backdrop{
-    height: 25em;
-    width: 130%;
-    background-color: #e29578;
 
-    border-radius: 0 0 50% 50% ;
-    transform: translateX(-50%);
-    left: 50%;
+.wrapper .screen {
+    min-width: 100%;
+    flex: 1;
+    transition: all 0.3s;
+}
+
+.head-wrapper {
+    padding: 0 30px;
+}
+
+.menu-btn {
+    width: 2rem;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.add-task-btn {
     position: absolute;
-
-    z-index: -1;
-}
-/* Barra de menu*/
-.head-wrapper{
-    padding: 20px;
-}
-.menu-btn{
-    width: 3em;
-    cursor: pointer;    
-}
-/* Texto */
-.welcome{
+    bottom: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
-    margin-top: 20px;
-}
-.welcome h1{
-    font-size: 1.6em;
-}
-.welcome p{
-    font-style: italic;
-    font-weight: 400;
+    justify-content: center;
+    background-color: #39a6f0;
+    transition: all 0.3s;
 }
 
-/* IMG */
-.welcome .img{
-    position: relative;
+.add-task-btn:hover {
+    transform: scale(1.1);
 }
-.welcome .img img{
-    width: 5rem;
+
+.add-task-btn.active {
+    z-index: 1;
+    bottom: 20rem;
+    transform: rotate(45deg);
 }
-.welcome .img .backdrop{
-    background-color: white;
-    height: 4rem;
-    width: 4rem;
+
+.add-task-btn svg {
+    width: 2rem;
+    color: #fff;
+}
+
+.add-task {
     position: absolute;
-    
-    transform: translateX(-50%);
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    padding: 20px 30px;
+    transition: all 0.3s;
+}
+
+.add-task.active {
+    bottom: 0;
+}
+
+.add-task .heading {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.input-group label {
+    width: max-content;
+    padding: 0 5px;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btns button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s;
+    z-index: 1;
+}
+
+button.add-btn {
+    background-color: #39a6f0;
+    color: #fff
+}
+
+.add-task-backdrop {
+    position: absolute;
+    bottom: 0;
     left: 50%;
-    border-radius: 150%;
-    z-index: -1;
+    transform: translateX(-50%);
+    width: 135%;
+    height: 20rem;
+    border-radius: 50% 50% 0 0;
+    background-color: #fff;
+}
+
+.black-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background-color: #00000023;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.black-backdrop.active {
+    opacity: 1;
+    visibility: visible;
 }
